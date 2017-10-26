@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Generate a survey question</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Question.js"></script>
+    </head>
+    <body>
+        <script>      
+         if (localStorage.getItem("Survey") === null) {
+        var question1 = {"num":"1",
+                         "ques":"How old are you?",
+                         "ans":["20 and younger","21-25","26-30","31 and older"]};
+             
+        var question2 = {"num":"2",
+                         "ques":"What is your gender?",
+                         "ans":["Male","Female","Other","Prefer not to answer"]};
+             
+        var question3 = {"num":"3",
+                         "ques":"What do you spend most of your money on?",
+                         "ans":["Foods","Bills","Games","Clothes"]};
+             
+        var question4 = {"num":"4",
+                         "ques":"If you received a large amount of money what would you do with it?",
+                         "ans":["Not spending it","Save half-spend half","Save all of it","Spend all of it"]};
+             
+        var question5 = {"num":"5",
+                         "ques":"How much do you spend per year on school(Gas,food,parking,etc)?",
+                         "ans":["$0-$100","$100-$200","$200-$300","$400-$1000"]};
+             
+        var question6 = {"num":"6",
+                         "ques":"How much is your income per week?",
+                         "ans":["$0-$20","$20-$50","$50-$100","$100-$500"]};
+      
+        var question=[];
+
+        question[0] = question1;
+        question[1] = question2;
+        question[2] = question3;
+        question[3] = question4;
+        question[4] = question5;
+        question[5] = question6; 
+        
+        var stri=JSON.stringify(question);
+        localStorage.setItem("Survey",stri);
+            
+    }
+        //If the localStorage already existed
+        var str=localStorage.getItem("Survey");
+        var survey = JSON.parse(str);
+        var questions = [];
+        
+        for(var i = 0; i < survey.length; i++)
+        {
+            var newQuest=new Question(survey[i]);
+            questions.push(newQuest);
+        }   
+        
+        //Display the array
+            for(var n=0;n<survey.length;n++){
+                document.write("The #"+(n+1)+" Question</br>");
+                var obj=survey[n];
+                var b = new Question(obj);
+                    b.display();
+                }
+        </script>
+      
+        <form action="getform.html" method="get">
+            <input name="Number" type="text" /><label>Question-Priority-Number</label><br/><br/>
+            <input name="Question" type="text" /><label>Question</label><br/><br/>
+            <input name="Answer1" type="text" /><label>Answer1</label><br/><br/>
+            <input name="Answer2" type="text" /><label>Answer2</label><br/><br/>
+            <input name="Answer3" type="text" /><label>Answer3</label><br/><br/>
+            <input name="Answer4" type="text" /><label>Answer4</label><br/><br/>
+ 
+            <input name="Submit" type="submit" />
+        </form>
+        
+<!--         <form action="getResult.html" method="get">
+         <script>
+           //Display the array
+            for(var n=0;n<survey.length;n++){
+                document.write("The #"+(n+1)+" Question</br>");
+                var obj=survey[n];
+                var b = new Question(obj);
+                    b.display();
+        }
+             </script>
+         <input name="Submit" type="submit" />
+    </form>-->
+        
+    </body>
+</html>

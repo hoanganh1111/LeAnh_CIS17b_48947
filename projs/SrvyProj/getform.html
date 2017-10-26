@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Get the answer from URL</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src="Question.js"></script>
+        <script type="text/javascript" src="Survey.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        
+        //Grab the info from the form
+        var url=document.location.href;
+        $_GET=getForm(url);
+
+        var counter=0;
+        var answers=[];
+        for(property in $_GET){
+            var str=$_GET[property];          //Place property value in string
+            var dec=decodeURIComponent(str);  //Convert to ascii
+            var clean=dec.replace(/\++/g,' ');//Remove + and replace by space
+            $_GET[property]=clean;            //Cleaned values
+            counter++;
+            if(counter>2&&clean!=="")answers.push(clean); //Place answers int their own array
+        }
+        
+        //Fill the Question with form information and display
+        var a=new Question($_GET["Number"],$_GET["Question"],answers);
+        
+        //////////////////////////
+        var text=JSON.stringify(a);
+        var str=localStorage.getItem("Survey"); 
+        var survey=JSON.parse(str);
+        var questions = [];
+        survey.push(a);
+        var text=JSON.stringify(survey);
+        localStorage.setItem("Survey",text);
+        
+        for(var i = 0; i < survey.length; i++)
+        {
+            var newQuest=new Question(survey[i]);
+            questions.push(newQuest);
+        }
+        //Display the array
+            for(var n=0;n<survey.length;n++){
+                document.write("The #"+(n+1)+" Question</br>");
+                var obj=survey[n];
+                var b = new Question(obj);
+                    b.display();
+        } 
+        ///////////////////////////
+    </script>
+    </body>
+</html>
