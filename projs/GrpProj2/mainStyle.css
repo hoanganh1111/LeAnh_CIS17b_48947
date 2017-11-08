@@ -1,0 +1,139 @@
+.iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+} 
+
+.map{
+    width: 70%;
+    height: 500px;
+    position: relative;
+    float: left;
+}
+
+.side_bar{
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.player_info{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+.dice{
+    position: relative;
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+.skip{
+    position: relative;
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+.skill{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+.inventory{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+.turns{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+
+#dice_button{
+    text-align: center;
+    line-height: 250%;
+    display: block;
+    margin: 10% auto;
+    font-size: 25px;
+    font-family: Permanent Marker;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #ad1616;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #440606;
+    width: 70%;
+    height: 70%;
+}
+
+#dice_button:hover {background-color: #720c0c}
+
+#dice_button:active{
+  background-color: #720c0c;
+  box-shadow: 0 3px #440606;
+  transform: translateY(2px);
+}
+
+#skip_button{
+    text-align: center;
+    display: block;
+    margin: 10% auto;
+    font-size: 25px;
+    font-family: Permanent Marker;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #1d7f21;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #082609;
+    width: 70%;
+    height: 70%;
+}
+
+#skip_button:hover {
+    background-color: #135415;
+}
+
+#skip_button:active{
+  background-color: #135415;
+  box-shadow: 0 3px #082609;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 850px){
+    .main{
+        height: 900px;
+    }
+    .map{
+        width: 100%;
+    }
+    
+    .side_bar{
+        width: 100%;
+    }
+    
+    .player_info{
+        width: 50%;
+    }
+    
+    .dice{
+        width: 25%;
+    }
+    
+    .skip{
+        width:25%;
+    }
+}

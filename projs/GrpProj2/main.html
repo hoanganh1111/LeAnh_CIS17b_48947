@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D&D</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="mainStyle.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="newStyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <script src="rollDice.js"></script>
+        <script type="text/javascript" src="Mage.js"></script>
+	</head>
+	<body>
+        <!-------------- header bar --------------->
+        <div class="header">
+            <img src="other_img/logo.png" width="50%">
+        </div>
+        
+        <!-------------- main/body --------------->
+        <div class="main">
+            <!-- map -->
+            <div class="map">
+                <img class="border" src="other_img/frame.png">
+            </div>
+            
+            <!--- side bar --->
+            <div class="side_bar">
+                <!-- player_info -->
+                <div class="player_info">
+                    <div class="icon">
+                        <img class="char_icon" src="other_img/mageIcon.png">
+                        <div class="char_stat">
+                            <p id="playerAtr"></p>
+                            </div>
+                         <div class="char_atr">   
+                            <p id="playerSta"></p>
+                        </div>
+                    </div>
+                    <div class="char_info">
+                        <p id="playerHp"></p>
+                        <p id="playerMa"></p>
+                    </div>                   
+                </div>
+                
+                <!-- dice button -->
+                <div class="dice">
+                    <a id="dice_button" onclick="rollDice(12)">ROLL</a>
+                </div>
+
+                <!-- skip button -->
+                <div class="skip">
+                    <button id="skip_button">SKIP</button>
+                </div>
+
+                <!-- skill -->
+                <div class="skill">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+
+                <!-- inventory -->
+                <div class="inventory">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+
+                <!-- turns -->
+                <div class="turns">
+                    <img class="border" src="other_img/frame.png">
+                </div>
+            </div>
+        </div>
+        
+        <!-------------- footer bar --------------->
+        <div class="footer">
+        
+        </div>
+        <script>
+            var a = new Mage(1,3,1,1);
+            a.baseStat();
+            document.getElementById("playerHp").innerHTML = "HP: " + a.HP;
+            document.getElementById("playerMa").innerHTML = "MA: " + a.MA;
+            
+            document.getElementById("playerAtr").innerHTML = "Str: " + a.STR + "<br>Int: " + a.INT+
+                                                             "<br>Dex: " + a.DEX+"<br>Con: " + a.CON+
+                                                             "<br>Con: " + a.CON;
+             document.getElementById("playerSta").innerHTML = "Atk: " + a.ATK+ "<br>Def: " + a.DEF+ 
+                                                              "<br>MaAtk: " + a.MATK+"<br>Spd: " + a.SPD+
+                                                              "<br>Sight: " + a.SIGHT;                                         
+        </script>
+	</body>
+</html>
