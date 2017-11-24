@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>D&D Log In</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="LoginStyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="header">
+            <img src="other_img/logo.png" width="100%">
+            </div>
+        
+            <img src="other_img/background_4.jpg" width="100%">
+            
+            <div class="login"> 
+            <img src ="other_img/avatar.png" class="avatar">
+            <form action="main.html" method="get">
+                <p>Email</p>
+                <input type="text" name="email" placeholder="Enter Email" 
+                       pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="4-8 characters and one number" 
+                       pattern="^(?=.*\d).{4,8}$" required>
+                <input type="submit" value="Sign in">
+                <a href="#">Can't Log In?</a>
+            </form>
+                </div>
+            
+            <div class="bottom">
+                <div class="flame">
+                    <img src="other_img/login_bottom.gif" width="100%">
+                </div>
+            </div>
+    </body>
+</html>

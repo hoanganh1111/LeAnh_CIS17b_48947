@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 17, 2017, 11:53:39 AM
+    Author     : anhhoangle1111
+*/
+
+body{
+    background-color: black;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.header{
+    height: 220px;
+    width: auto;
+    padding: 0px 0;
+    margin: auto;
+}
+
+.login{
+    padding: 60px 30px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-180%,-30%);
+    background: rgba(0,0,0,0.5);
+}
+
+.bottom{
+    height: 200px;
+    overflow: hidden;
+}
+
+.flame{
+  
+    transform: translate(0%,-60%);
+}
+
+.login p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #E27822;
+}
+
+.login input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login input[type="text"],
+.login input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+.login input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #E27822;
+    font-size: 16px;
+    background: black;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.login input[type="submit"]:hover{
+    background: red;
+    color: black;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50%-50px);
+}
