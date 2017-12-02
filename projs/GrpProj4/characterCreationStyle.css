@@ -1,0 +1,269 @@
+.main{
+    
+}
+
+.border{
+    z-index: -1;
+}
+
+h1{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    margin: auto;
+    padding: 5% 5% 0% 5%;
+}
+
+p{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    margin: auto;
+    padding: 1% 5% 1% 5%;
+}
+
+fieldset{
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 5%;
+    padding: 0px;
+}
+
+legend{
+    margin: 5px;
+    padding: 0px 20px 0px 5px;
+}
+
+/****************** classes container  ****************/
+#classes{
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+    margin: auto;
+    padding: 0% 4% 0% 4%;
+    overflow: hidden;
+}
+
+#classes li{
+    font-family: 'Permanent Marker', cursive;
+    width: 21%;
+    height: 250px;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 1%;
+}
+
+#classes li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0px 0px 0px;
+    cursor: pointer;
+}
+
+#classes li a:hover{
+    color: black;
+}
+
+/****************** class images  ****************/
+#mage{
+    background-image: url(class_img/mage%20portrait.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#mage:hover{
+    background-color: rgb(183, 196, 206);
+    border-radius: 10px;
+}
+
+#archer{
+    background-image: url(class_img/archer_%20portrait.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#archer:hover{
+    background-color: rgb(203, 188, 45);
+    border-radius: 10px;
+}
+
+#fighter{
+    background-image: url(class_img/fighter_%20portrait.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#fighter:hover{
+    background-color: rgb(239, 237, 139);
+    border-radius: 10px;
+}
+
+#knight{
+    background-image: url(class_img/knight%20portrait.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#knight:hover{
+    background-color: rgb(188, 76, 191);
+    border-radius: 10px;
+}
+
+/****************** attributes container  ****************/
+#attributeContainer{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    width: 42%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin: 0% 2.5% 5% 5%;
+}
+
+#pointLeft{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    background-color: transparent;
+    font-size: 17px;
+    border: none;
+    height: 30px;
+    width: 25px;
+    text-align: left;
+    margin-left: 2px;
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+/* remove spinner arrow on pointLeft number input */
+#pointLeft{
+    -moz-appearance:textfield;
+}
+
+#pointLeft::-webkit-inner-spin-button,
+#pointLeft::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+#attributes{
+    padding: 0% 4% 4% 4%;
+}
+
+.attInput{
+    font-size: 13px;
+    border: none;
+    height: 19px;
+    width: 20px;
+    text-align: center;
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+/* remove spinner arrow on number input */
+.attInput{
+    -moz-appearance:textfield;
+}
+
+.attInput::-webkit-inner-spin-button,
+.attInput ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.attMinusButton{
+    border: none;
+    height: 20px;
+    border-radius: 50% 0% 0% 50%;
+    background-color: white;
+    cursor: pointer;
+    color: white;
+    background-color: #ad1616;
+}
+
+.attMinusButton:disabled, .attMinusButton[disabled]{
+    background-color: #720c0c;
+}
+
+.attPlusButton{
+    border: none;
+    height: 20px;
+    border-radius: 0% 50% 50% 0%;
+    background-color: white;
+    cursor: pointer;
+    color: white;
+    background-color: #135415;
+}
+
+.attPlusButton:disabled, .attPlusButton[disabled]{
+    background-color: #082609;
+}
+
+/****************** preview container  ****************/
+#previewContainer{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    width: 40%;
+    position: relative;
+    float: right;
+    margin: 0% 5% 3.5% 2.5%;
+}
+
+.preview{
+    padding: 0% 4% 4% 4%
+}
+
+/****************** submitButton  ****************/
+#submitButton{
+    text-align: center;
+    line-height: 250%;
+    display: block;
+    margin: 0% 5% 5% 2.5%;
+    font-size: 25px;
+    font-family: "Permanent Marker", cursive;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #ad1616;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #600a0a;
+    width: 40.5%;
+    height: 75px;
+    float: right;
+}
+
+#submitButton:hover{
+    background-color: #8c1010;
+}
+
+#submitButton:active{
+  background-color: #8c1010;
+  box-shadow: 0 3px #600a0a;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 700px){
+    #attributeContainer{
+        width: 89%;
+    }
+    
+    #previewContainer{
+        width: 89%;
+    }
+    
+    #submitButton{
+        width: 90%;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Character's Stat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Character.js"></script>
+        <style>
+p {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+}
+        </style>
+    </head>
+    <body>
+        <p>First Class</p>
+        <script>  
+            var skill1 = ["Ice Blast"];
+            var mage = new Character("Mage",1, 5, 3, 5, skill1);
+            mage.baseStat(skill1);
+            mage.display();
+        </script>
+        
+        <p>Second Class</p>
+        <script>
+            var skill2 = ["Action Surge"];
+            var fighter = new Character("Fighter",5, 1, 4, 4, skill2);
+            fighter.baseStat(skill2);
+            fighter.display();
+        </script>
+        
+        <p>Third Class</p>
+        <script>
+            var skill3 = ["Battle Wrath"];
+            var knight = new Character("Knight",6, 3, 2, 5, skill3);
+            knight.baseStat(skill3);
+            knight.display();
+        </script>
+        
+        <p>Fourth Class</p>
+        <script>
+            var skill4 = ["Rapid Shot"];
+            var archer = new Character("Archer",3, 3, 5, 4, skill4);
+            archer.baseStat(skill4);
+            archer.display();
+        </script>
+    </body>
+</html>
+

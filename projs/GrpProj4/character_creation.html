@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Character Creation - D&D</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="characterCreationStyle.css">
+    </head>
+    
+    <body>
+        <!-------------- header bar --------------->
+        <div class="header">
+            <img src="other_img/logo.png" width="50%">
+        </div>
+        
+        <!-------------- main/body --------------->
+        <div class="main">
+            <div><img src="other_img/frame.png" class="border"></div>
+            
+            <!---------- classes ---------->
+            <fieldset>
+                <legend><h1>Classes </h1></legend>
+                <ul id="classes">
+                    <li id="mage">
+                        <a onclick="active('mage')">Mage</a>
+                    </li>
+
+                    <li id="archer">
+                        <a onclick="active('archer')">Archer</a>
+                    </li>
+
+                    <li id="fighter">
+                        <a onclick="active('fighter')">Fighter</a>
+                    </li>
+
+                    <li id="knight">
+                        <a onclick="active('knight')">Knight</a>
+                    </li>
+                </ul>
+
+                <p id="description"><b>Select one of the above class to begin</b></p>
+            </fieldset>
+            
+            <!---------- attributes ---------->
+            <fieldset id="attributeContainer">
+                <legend><h1>Attributes</h1></legend>
+                <div id="attributes">
+                    <input type="number" value="6" id="pointLeft" disabled>
+                    attribute points left
+                    <br><br>
+                    
+                    <div>
+                        Str: ( enhance physic attack )<br>
+                        <button type="button" class="attMinusButton" id="strminus" onclick="att('str', 'minus')" disabled>-</button>
+                        <input type="number" value="0" class="attInput" id="str" disabled>
+                        <button type="button" class="attPlusButton" id="strplus" onclick="att('str', 'plus')">+</button>
+                    </div>
+                    
+                    <div>
+                        Con: ( enhance HP & defence )<br>
+                        <button type="button" class="attMinusButton" id="conminus" onclick="att('con', 'minus')" disabled>-</button>
+                        <input type="number" value="0" class="attInput" id="con" disabled>
+                        <button type="button" class="attPlusButton" id="conplus" onclick="att('con', 'plus')">+</button>
+                    </div>
+                    
+                    <div>
+                        Int: ( enhance MP & magic attack )<br>
+                        <button type="button" class="attMinusButton" id="intminus" onclick="att('int', 'minus')" disabled>-</button>
+                        <input type="number" value="0" class="attInput" id="int" disabled>
+                        <button type="button" class="attPlusButton" id="intplus" onclick="att('int', 'plus')">+</button>
+                    </div>
+                    
+                    <div>
+                        Dex: ( enhance physic & magic attack )<br>
+                        <button type="button" class="attMinusButton" id="dexminus" onclick="att('dex', 'minus')" disabled>-</button>
+                        <input type="number" value="0" class="attInput" id="dex" disabled>
+                        <button type="button" class="attPlusButton" id="dexplus" onclick="att('dex', 'plus')">+</button>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <!---------- Preview ---------->
+            <fieldset id="previewContainer">
+                <legend><h1>Preview</h1></legend>
+                <div class="preview">
+                    <div id="classPreview">Please Select a class to begin</div>
+                    <div id="attPreview"></div>
+                </div>
+            </fieldset>
+            
+            <!---------- Submit Button ---------->
+            <a id="submitButton">Next</a>
+            
+        </div>
+        
+        <!-------------- footer bar --------------->
+        <div class="footer">
+        
+        </div>
+        
+        <script>
+            var classSelect = "";
+            
+            // character selection
+            function active(className){
+                var classes = document.getElementsByTagName("LI");
+                for(var i = 0; i < classes.length; i++){
+                    document.getElementsByTagName("LI")[i].style.boxShadow = "none";
+                }
+                document.getElementById("description").innerHTML = "<b>Class bonus</b>: ";
+                
+                document.getElementById(className).style.boxShadow = "0 0 13px white";
+                
+                if(className == "mage"){
+                    document.getElementById("description").innerHTML += "mage starts with an extra skill - fire ball";
+                } else if(className == "archer"){
+                    document.getElementById("description").innerHTML += "archer starts with 1 extra sight";
+                } else if(className == "fighter"){
+                    document.getElementById("description").innerHTML += "fighter has 50% to counter attack within melee range";
+                } else if(className == "knight"){
+                    document.getElementById("description").innerHTML += "knight has twice the defense";
+                }
+                
+                classSelect = className;
+                pre();
+            }
+            
+            // attribute selection
+            function att(attName, action){
+                var attribute = document.getElementById(attName);
+                var minusButton = document.getElementById(attName + "minus");
+                var plusButton = document.getElementById(attName + "plus");
+                var pointLeft = document.getElementById("pointLeft");
+                
+                if(action == "plus"){
+                    if(pointLeft.value > 0){
+                        attribute.stepUp(1);
+                        pointLeft.stepDown(1);
+                        minusButton.disabled = false;
+                        if(pointLeft.value == 0){
+                            document.getElementById("strplus").disabled = true;
+                            document.getElementById("conplus").disabled = true;
+                            document.getElementById("intplus").disabled = true;
+                            document.getElementById("dexplus").disabled = true;
+                        }
+                    } else if(pointLeft.value <= 6){
+                        plusButton.disabled = true;
+                    }
+                }else if(action == "minus"){
+                    if(attribute.value <= 0){
+                        minusButton.disabled = true;
+                    }else{
+                        attribute.stepDown(1);
+                        pointLeft.stepUp(1);
+                        document.getElementById("strplus").disabled = false;
+                        document.getElementById("conplus").disabled = false;
+                        document.getElementById("intplus").disabled = false;
+                        document.getElementById("dexplus").disabled = false;
+                        if(attribute.value<=0){
+                            minusButton.disabled = true;
+                        }
+                    }
+                }
+                
+                pre();
+            }
+            
+            // preview the selection
+            function pre(){
+                document.getElementById("classPreview").innerHTML = "Class: " + classSelect;
+                
+                document.getElementById("attPreview").innerHTML = "<br>Str: " + document.getElementById("str").value;
+                document.getElementById("attPreview").innerHTML += "<br>Con: " + document.getElementById("con").value;
+                document.getElementById("attPreview").innerHTML += "<br>Int: " + document.getElementById("int").value;
+                document.getElementById("attPreview").innerHTML += "<br>Dex: " + document.getElementById("dex").value;
+            }
+        </script>
+    </body>
+</html>
