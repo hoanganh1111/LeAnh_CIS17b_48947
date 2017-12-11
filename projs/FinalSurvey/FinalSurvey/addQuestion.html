@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add a new survey question</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src="Question.js"></script>
+        <script type="text/javascript" src="Survey.js"></script>
+        <script type="text/javascript" src="clearStorage.js"></script>
+        <link rel="stylesheet" href="ulStyle.css">
+    </head>
+    <body>
+        <ul class="topnav">
+            <li><a href="admin_main.html">Admin Main Page</a></li>
+            <li><a href="getResult.html">Display The Result</a></li>
+            <li><a href="admin_view.php">Display Survey Takers</a></li>
+            <li><a href="TempSurvey.html">Display Template Survey</a></li>
+            <li><a href="addQuestion.html" onclick="clearStorage()" class="right" >Delete The Survey</a></li>
+            <li><a href="addQuestion.html" onclick="delete_cookie()">Delete The User Cookies</a></li>
+            <li style="float:right"><a class="active" onclick="delete_cookie_admin()" href="login.html">Log Out</a></li>
+        </ul>
+        
+        <div id="main">
+            <h1 id="title">New Survey</h1>
+            <form action="getQuestion.html" method="get" id="form">
+                Survey Name: 
+                <br><input type="text" name="name" required><br><br>
+                Description: 
+                <br><input type="text" name="description" required><br><br>
+                Identifier: 
+                <br><input type="text" name="identifier" required><br><br>
+                Question: 
+                <br><input type="text" name="question" required><br><br>
+                Answers (enter at least two answer options): 
+                <br>1. <input type="text" name="answer1" required>
+                <br>2. <input type="text" name="answer2" required>
+                <br>3. <input type="text" name="answer3">
+                <br>4. <input type="text" name="answer4">
+                <br>5. <input type="text" name="answer5"><br>
+                <br><input type="submit" name="submit">
+            </form>
+        </div>
+        
+        <script>
+            // check if survey object exist in local storage
+            if('survey' in localStorage){
+                // reconstruct the survey object from local storage
+                var newSurvey = new Survey();
+                newSurvey.reconstSurvey();
+                
+                document.title = "Add Question - " + newSurvey.name;
+                
+                // change the title of this web page
+                document.getElementById("title").innerHTML="Add Question";
+                
+                // remove the "survey name" and "description" form
+                var node = document.getElementById('form');
+                for(var i = 0; i < 10; i++){
+                    node.removeChild(node.firstChild);
+                }
+            }
+            else{
+                // Add the "New Survey" option
+                document.getElementById("topnav").innerHTML+='<li><a href="addQuestion.html" class="active">New Survey</a></li>';
+            }
+            
+            function delete_cookie() {
+                document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "userFirst=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "userLast=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+
+                alert("The user cookies has been deleted!");
+            }
+            
+            function delete_cookie_admin() {
+                document.cookie = "adminEmail=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "adminFirst=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "adminLast=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+
+                alert("Goodbye Admin!");
+            }
+        </script>
+    </body>
+</html>

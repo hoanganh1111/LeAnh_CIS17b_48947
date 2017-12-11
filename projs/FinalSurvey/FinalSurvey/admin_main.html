@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>This is the Admin Main Page!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="clearStorage.js"></script>
+         <link rel="stylesheet" href="ulStyle.css">
+    </head>
+    <body>
+        <h1>Welcome back Admin!</h1>
+        <h2>Select the options below:</h2>
+            <ul class='topnav'>
+                <li><a href="addQuestion.html">Add New Question</a></li>
+                <li><a href="getResult.html">Display The Result</a></li>
+                <li><a href="admin_view.php">Display Survey Takers</a></li>
+                <li><a href="TempSurvey.html">Display Template Survey</a></li>
+                <li><a href="admin_main.html" onclick="clearStorage()" class="right" >Delete The Survey</a></li>
+                <li><a href="admin_main.html" onclick="delete_cookie()">Delete The User Cookies</a></li>
+                <li style="float:right"><a class="active" onclick="delete_cookie_admin()" href="login.html">Log Out</a></li>
+            </ul>
+        
+        
+    <script type="text/javascript">
+            
+            function delete_cookie() {
+                document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "userFirst=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "userLast=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+
+                alert("The user cookies has been deleted!");
+            }
+            
+            function delete_cookie_admin() {
+                document.cookie = "adminEmail=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "adminFirst=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+                document.cookie = "adminLast=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../";
+
+                alert("Goodbye Admin!");
+            }
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Generate a survey question</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Question.js"></script>
+        <script type="text/javascript" src="Survey.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript">
+        
+        if('survey' in localStorage){
+            //Redirect back to the main.php
+            window.location.href="main.php";
+        }
+        else{
+            var newSurvey = new Survey();
+            // adding survey questions into the newSurvey and JSON for example purposes
+            var name = "Getting to know CSC17B Students";
+            var description = "This is a quick survey to find out some basic informations about the classmate in CSC17B class!";
+            var newSurvey = new Survey(name, description);
+            
+            // Question 1
+            var identifier = "1";
+            var questions = "What year of school are you in?";
+            var answer = ["Freshman", "Sophomore", "Junior", "Senior"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 2
+            identifier = "2";
+            questions = "Do you live…";
+            answer = ["Off campus with family", "Off campus independently", "On campus", "Other"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 3
+            identifier = "3";
+            questions = "What is your enrollment status?";
+            answer = ["Full-time", "Part-time", "Other"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 4
+            identifier = "4";
+            questions = "What is your major?";
+            answer = ["Computer Science", "Computer Engineer", "Computer Infomation System", "Undeclared", "Other"];
+            this.newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 5
+            identifier = "5";
+            questions = "Please rate the classroom facilities at our educational facility.";
+            answer = ["Excellent", "Good", "Fair", "Poor", "Very Poor"];
+            newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 6
+            identifier = "6";
+            questions = "Which best describes your race?";
+            answer = ["African American/black", "Caucasian/white", "Spanish/Hispanic", "Asian", "Pacific Islander", "Other"];
+            newSurvey.addQuestion(identifier, questions, answer);
+            
+            // Question 7
+            identifier = "7";
+            questions = "What is your gender?";
+            answer = ["Male", "Female", "Prefer not to say", "Other"];
+            newSurvey.addQuestion(identifier, questions, answer);
+            
+            //Use JSON to turn into a string and store into the localStorage
+            var text=JSON.stringify(newSurvey);
+            localStorage.setItem("survey", text);
+            window.location.href="main.php";
+        }
+
+        </script>
+
+    </body>
+</html>
