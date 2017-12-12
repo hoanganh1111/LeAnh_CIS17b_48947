@@ -1,0 +1,171 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 10, 2017, 5:49:52 PM
+    Author     : anhhoangle1111
+*/
+
+body{
+    background-color: #e7e7e7;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/*Catalog*/
+#content {
+    width: 1200px;
+    border: 0;
+    padding: 0;
+    margin: auto;
+}
+#content ul {
+    padding: 0; 
+    margin: 50px 50px 50px;
+    list-style-type: none;
+}
+#content ul li {
+    text-align: center;
+    border: 5px;
+    padding: 25px;
+    float: left;
+}
+
+img{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
+p{
+    font-weight: bold;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+#popupBig{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+    z-index: 2;
+}
+
+#popupSmall{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 275px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 20px;
+    color: #E27822;
+    padding: 10px 30px 10px 30px;
+}
+
+#closeBtn{
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+    color: red;
+}
+
+#closeBtn:hover{
+    color: white;
+}
+
+#popupCont{
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,0%);
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+#itemImg{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+
+#popupName{
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    color: red;
+    text-align: left;
+    padding: 1% 0%;
+}
+
+#popupClose{
+    float: right;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(239, 71, 71);
+    cursor: pointer;
+}
+
+#popupClose:hover{
+    color: rgb(193, 56, 56);
+}
+
+#popupPrice{
+    display: block;
+    float: left;
+    margin: 4% 0% 2% 0%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#popupDes{
+    display: block;
+    float: left;
+    width: 38%;
+    height: auto;
+    overflow: scroll;
+    text-align: left;
+    margin-bottom: 4%;
+}
+
+#popupAdd{
+    display: block;
+    float: left;
+    width: 38%;
+    height: 65px;
+    font-size: 20px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#popupAdd:hover{
+    background-color: rgb(50, 90, 50);
+}
