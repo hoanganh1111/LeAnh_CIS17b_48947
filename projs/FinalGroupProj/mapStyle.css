@@ -1,0 +1,63 @@
+/********************* map ************************/
+#mapTable{
+    position: absolute;
+    width: 2500px;
+}
+
+table, th, td{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-collapse:collapse;
+}
+
+table{
+    border: none;
+}
+
+td{
+    outline: 2px solid rgb(160, 160, 160);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.floor{
+    background: url(map_img/tile2.gif) -300px -400px;
+}
+
+.wall{
+    background: url(map_img/tile2.gif) 1px 0px;
+}
+
+.obst{
+    background: url(map_img/tile2.gif) -300px 1px;
+}
+
+.door{
+    background: url(map_img/tile2.gif) -350px -50px;
+}
+
+.fog{
+    background-color: rgb(0, 0, 0);
+    cursor: default;
+}
+
+.notYou{
+    pointer-events: none;
+    cursor: default;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+a{
+    display:inline-block;
+    text-decoration:none;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+a.active:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
