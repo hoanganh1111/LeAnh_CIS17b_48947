@@ -1,0 +1,251 @@
+body{
+    background: url(Picture/background_1.jpeg); 
+    background-repeat:   no-repeat;
+    font-family: sans-serif;
+    background-size: cover;
+}
+
+.loginBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 420px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+}
+
+.loginBox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.loginBox input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginBox input[type="text"],
+.loginBox input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50%-50px);
+}
+
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #efed40;
+}
+
+::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+.loginBox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #ff267e;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.loginBox input[type="submit"]:hover{
+    background: #efed40;
+    color: #262626;
+}
+
+.loginBox a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#register{
+    display: block;
+    height: 20px;
+    color: #fff;
+    background: #ff267e;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#register:hover{
+    background: #efed40;
+    color: #262626;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #E27822;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#fromInput{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+#submitBtn{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #E27822;
+    font-size: 16px;
+    background: black;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#submitBtn:hover{
+    background: red;
+    color: black;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-50px);
+    left: calc(10px);
+}
+
+#bigCont{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+#registerCont{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 275px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 20px;
+    color: #E27822;
+    padding: 10px 30px 10px 30px;
+}
+
+#registerCont h1{
+    color: #efed40;
+}
+
+#close{
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#close:hover{
+    color: white;
+}
+
+@media screen and (max-width: 500px){
+    #logo{
+        width:100%;
+    }
+}
+
+
+
+#admin{
+    cursor: pointer;
+}
+
+#AdminBigCont{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+#AdminCont{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 275px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 20px;
+    color: #E27822;
+    padding: 10px 30px 10px 30px;
+}
+
+#AdminCont h1{
+    color: #efed40;
+}
+
+#adminclose{
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#adminclose:hover{
+    color: white;
+}
